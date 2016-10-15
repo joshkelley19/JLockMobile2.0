@@ -1,0 +1,33 @@
+<ion-view view-title="Vault">
+
+<ion-content scroll="true">
+        
+    
+<!--
+    <ion-header-bar>
+    
+    <div class="bar bar-header bar-energized">
+        <i class="icon ion-locked"></i>
+</div>
+    </ion-header-bar>
+-->
+    
+    <h1 id="majorHeader">Welcome Josh</h1>
+<!--    pass in user first name-->
+    
+    <div>
+        <ion-list>
+          <ion-item ng-repeat="entry in entriesFromFB" href="#/account/vault/{{entriesFromFB.indexOf(entry)}}">
+        {{entry.website}}
+      </ion-item>
+        </ion-list>
+    </div>
+     
+    </ion-content>
+ <div class="bar bar-footer">
+        <button class="button button-full button-dark" on-tap="openModal()" style="position: fixed; bottom: 3.5em">
+  Add New Entry
+</button>
+    
+    </div>
+</ion-view>

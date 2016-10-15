@@ -1,0 +1,11 @@
+<ion-modal-view>
+    <ion-content class="padding">
+        <div>
+            <label class="item item-input"><input type="text" placeholder="User Name" required="true" ng-model="entry.user"/></label>
+            <label class="item item-input"><input type="text" placeholder="Password" ng-model="entry.user.password"/></label>
+        </div>
+        <button class="button button-full button-energized" on-tap="signIn()">Sign In</button>
+        <a ui-sref="account.welcome">No account yet? That's OK. Sign Up Here!</a>
+    
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,20 @@
+<ion-tabs class="tabs-icon-top tabs-color-active-energized">
+
+  <!-- Welcome Page Tab -->
+  <ion-tab title="Welcome" icon-off="ion-person-stalker" icon-on="ion-person-stalker" ui-sref="#/account/welcome">
+    <ion-nav-view name="account-welcome"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Entries Tab -->
+  <ion-tab title="Vault" icon-off="ion-locked" icon-on="ion-unlocked" href="#/account/vault">
+    <ion-nav-view name="account-vault"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Settings Tab -->
+  <ion-tab title="Settings" icon-off="ion-gear-a" icon-on="ion-gear-b" href="#/account/settings">
+<!--      # used for tab name instead of url-->
+    <ion-nav-view name="account-settings"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>

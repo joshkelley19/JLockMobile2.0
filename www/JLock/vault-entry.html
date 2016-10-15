@@ -1,0 +1,18 @@
+<ion-view hide-back-button="false" view-title="Entry">
+    <ion-content>
+<!--
+        <div>
+          <h1 ng-repeat="entry in dbEntries" href="#/account/vault/{{entry.$id}}">
+        {{entry.password}}
+      </h1>
+    </div>for testing
+-->
+        
+        
+        
+        <div>
+            <h3>Website: {{dbEntries[test].website}}<br>User Name: {{dbEntries[test].userName}}<br>Password: {{dbEntries[test].password}}</h3>
+        </div>
+        <button class="button button-full button-assertive" on-tap="deleteJLockEntry(dbEntries[test])" ui-sref="account.vault" nav-direction="back">Delete Entry</button>
+    </ion-content>
+</ion-view>

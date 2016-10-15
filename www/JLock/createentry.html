@@ -1,0 +1,50 @@
+<ion-modal-view>
+<ion-content class="padding">
+    
+    <div class="list">
+        
+        <label class="item item-input">
+        <input type="text" placeholder="Website URL" ng-model="entry.website"/>
+        </label>
+
+        <label class="item item-input">
+        <input type="text" placeholder="User Name/Email" ng-model="entry.userName"/>
+        </label>
+        
+        <label class="item item-input" ng>
+        <input type="text" placeholder="Password" ng-model="entry.password"/>
+        <button class="button button-small button-dark" on-tap="allowPasswordGeneration()">Generate Password</button></label>
+    </div>
+    
+    <div ng-hide="passwordToBeGenerated">
+    <div class="list">
+    <label class="item item-energized">Length {{passLength}}<br>
+    </label>
+    <div class="item range range-positive">
+    <i>8</i>
+    <input type="range" name="volume" min="8" max="24" value="8" ng-model="passLength">
+    <i>24</i>
+    </div>
+<!--
+    <label class="item item-input item-select">
+    <div class="input-label">
+    Length
+    </div>
+    <select ng-model="passLength">
+
+    <option selected>8</option><option>9</option><option>10</option><option >11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option>
+    </select>
+    </label>
+-->
+    </div>
+        
+    <ion-checkbox ng-model="letters">Letters</ion-checkbox>
+    <ion-checkbox ng-model="numbers">Numbers</ion-checkbox>
+    <ion-checkbox ng-model="chars">Characters (i.e. ! @ # $ . +)</ion-checkbox>
+    <h1>{{invalid}}</h1>
+    <button class="button button-full button-assertive" on-tap="generatePassword(passLength,letters,numbers,chars)">Randomize!!!</button>
+    </div>
+    <button class="button button-full button-dark" on-tap="addEntry();closeModal()" ng-disabled="allowSubmit()">
+    Submit Entry</button>
+    </ion-content>
+</ion-modal-view>
