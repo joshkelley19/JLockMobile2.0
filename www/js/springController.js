@@ -130,7 +130,16 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SettingsCtrl', function($scope, $stateParams, $http) {
-    $http.get("http://localhost:8080/passwords")
+    
+    $scope.dese = {
+        newWebsite : "",
+        newUserName : "",
+        newPassword: ""
+        
+    };
+    
+    
+ $http.get("http://localhost:8080/jlock/entries")
         .then(function (response) {
             setPasswords(response.data);
     });
@@ -138,6 +147,11 @@ angular.module('starter.controllers', [])
         $scope.passwords = passwords;
         console.log($scope.passwords);
     };
+    
+    $http.post("http://localhost:8080/jlock/entries")
+        .then(function (response) {
+        console.log(response.data);
+    });
     
 });
 //voice recognition for passwords
