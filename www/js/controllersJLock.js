@@ -130,14 +130,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SettingsCtrl', function($scope, $stateParams, $http) {
-    $http.get("http://localhost:8080/passwords")
-        .then(function (response) {
-            setPasswords(response.data);
-    });
-    var setPasswords = function (passwords){
-        $scope.passwords = passwords;
-        console.log($scope.passwords);
-    };
     
 });
 //voice recognition for passwords
