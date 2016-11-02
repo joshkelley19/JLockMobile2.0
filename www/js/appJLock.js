@@ -6,7 +6,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('JLock', ['ionic', 'JLock.controllers', 'JLock.services'])
+angular.module('JLock', ['ionic', 'JLock.controllers', 'JLock.services1', 'JLock.services2', 'JLock.services3', 'JLock.controllers1', 'JLock.controllers2' ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -54,7 +54,7 @@ angular.module('JLock', ['ionic', 'JLock.controllers', 'JLock.services'])
     views: {
       'account-vault': {
         templateUrl: 'JLock/vault.html',
-        controller: 'VaultCtrl'
+        controller: 'ManagePasswordsCtrl'
       }
     }
   })
@@ -64,16 +64,25 @@ angular.module('JLock', ['ionic', 'JLock.controllers', 'JLock.services'])
       views: {
         'account-vault': {
           templateUrl: 'JLock/vault-entry.html',
-          controller: 'EntryCtrl'
+          controller: 'ManagePasswordsCtrl'
         }
       }
     })
+  .state('account.newentry', {//vault
+    url: '/vault',
+    views: {
+      'new-entry': {
+        templateUrl: 'JLock/createentry.html',
+        controller: 'CreatePasswordsCtrl'
+      }
+    }
+  })
     .state('account.settings', {//settings
       url: '/settings',
       views: {
         'account-settings': {
           templateUrl: 'JLock/settings.html',
-          controller: 'SettingsCtrl'
+          controller: 'CreatePasswordsCtrl'
         }
       }
     })

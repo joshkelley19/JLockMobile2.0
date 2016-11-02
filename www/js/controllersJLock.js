@@ -5,6 +5,7 @@ angular.module('JLock.controllers', [])
     })
 
     .controller('VaultCtrl', function ($scope, $http) {
+    
     })
 
     .controller('EntryCtrl', function ($scope, $stateParams) {

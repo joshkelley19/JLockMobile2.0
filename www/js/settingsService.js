@@ -1,4 +1,4 @@
-angular.module('JLock.services', [])
+angular.module('JLock.services2', [])
 
     .factory('Settings', function () {
 

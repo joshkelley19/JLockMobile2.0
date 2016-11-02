@@ -1,4 +1,4 @@
-angular.module('JLock.controllers', [])
+angular.module('JLock.controllers1', [])
     .controller('CreatePasswordsCtrl', function ($stateParams, $http, Account, Requests) {
         
         var getRandomPassword = function () {
@@ -11,7 +11,7 @@ angular.module('JLock.controllers', [])
         };
 
         var getScheme = function () {
-            $http.get(Requests.)
+            $http.get(Requests.scheme)
                 .then(function (response) {
                 
                 }, function (error) {

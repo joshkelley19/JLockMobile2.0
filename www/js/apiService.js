@@ -1,4 +1,4 @@
-angular.module('JLock.services', [])
+angular.module('JLock.services3', [])
 
 .factory('Requests', function() {
   // Might use a resource here that returns a JSON array
