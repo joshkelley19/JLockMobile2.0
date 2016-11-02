@@ -1,0 +1,4 @@
+angular.module('JLock.controllers', []).controller('CreatePasswordsCtrl', function($stateParams) {
+
+
+})
