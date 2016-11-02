@@ -6,8 +6,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('JLock', ['ionic', 'JLock.controllers', 'JLock.services1', 'JLock.services2', 'JLock.services3', 'JLock.controllers1', 'JLock.controllers2' ])
-
+angular.module('JLock', ['ionic','JLock.services1', 'JLock.services2', 'JLock.services3', 'JLock.controllers1', 'JLock.controllers2' ])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -45,7 +44,8 @@ angular.module('JLock', ['ionic', 'JLock.controllers', 'JLock.services1', 'JLock
     views: {
       'account-welcome': {
         templateUrl: 'JLock/welcome.html',
-        controller: 'WelcomeCtrl'
+        controller: 'ManagePasswordsCtrl',
+          controllerAs: 'mpc'
       }
     }
   })
@@ -54,26 +54,29 @@ angular.module('JLock', ['ionic', 'JLock.controllers', 'JLock.services1', 'JLock
     views: {
       'account-vault': {
         templateUrl: 'JLock/vault.html',
-        controller: 'ManagePasswordsCtrl'
+        controller: 'ManagePasswordsCtrl',
+          controllerAs: 'mpc'
       }
     }
   })
 
   .state('account.entry', {//vault.entry
-      url: '/vault/:entryWebsite',
+      url: '/vault/:id',
       views: {
         'account-vault': {
           templateUrl: 'JLock/vault-entry.html',
-          controller: 'ManagePasswordsCtrl'
+          controller: 'ManagePasswordsCtrl',
+          controllerAs: 'mpc'
         }
       }
     })
   .state('account.newentry', {//vault
-    url: '/vault',
+    url: '/newentry',
     views: {
-      'new-entry': {
+      'account-vault': {
         templateUrl: 'JLock/createentry.html',
-        controller: 'CreatePasswordsCtrl'
+        controller: 'CreatePasswordsCtrl',
+          controllerAs: 'cpc'
       }
     }
   })
@@ -82,7 +85,8 @@ angular.module('JLock', ['ionic', 'JLock.controllers', 'JLock.services1', 'JLock
       views: {
         'account-settings': {
           templateUrl: 'JLock/settings.html',
-          controller: 'CreatePasswordsCtrl'
+          controller: 'CreatePasswordsCtrl',
+          controllerAs: 'cpc'
         }
       }
     })
